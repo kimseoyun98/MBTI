@@ -5,7 +5,7 @@ const Main = () => {
   const token = localStorage.getItem("accessToken");
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center -mt-8 gap-12">
+    <div className="h-screen flex flex-col items-center justify-center -mt-12 gap-12">
       <h1 className="text-4xl font-bold">무료 성격 테스트</h1>
       <p>자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.</p>
       <>

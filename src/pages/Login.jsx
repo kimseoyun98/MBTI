@@ -26,12 +26,9 @@ const Login = () => {
         const userData = {
           id: data.userId,
           nickname: data.nickname,
-          avatar: data.avatar,
         };
-        // userData 콘솔로 출력
         console.log("로그인 성공, 받아온 사용자 정보:", userData);
 
-        // login 함수를 사용하여 인증 정보를 업데이트
         login(token, userData);
         navigate("/mypage");
       } else {
@@ -75,7 +72,7 @@ const Login = () => {
           </button>
           <p className="text-sm mt-2">
             계정이 없으신가요?{" "}
-            <Link to="/login" className="text-gray-400 hover:text-blue-300">
+            <Link to="/signup" className="text-gray-400 hover:text-blue-300">
               회원가입
             </Link>
           </p>

@@ -25,7 +25,6 @@ const mbtiDescriptions = {
 };
 
 const TestResultItem = ({ result, onUpdate, onDelete, isHidden }) => {
-  // AuthContext에서 user 정보 가져오기
   const { user } = useContext(AuthContext);
 
   // 사용자와 결과 소유자 확인
@@ -60,7 +59,7 @@ const TestResultItem = ({ result, onUpdate, onDelete, isHidden }) => {
   return (
     <div className="w-full p-6 bg-gray-800 rounded-lg shadow-lg text-white">
       <div className="flex justify-between items-center bg-gray-800 border-b border-gray-700 pb-3 mb-3">
-        <h4 className="text-xl font-semibold bg-gray-800">{result.nickname}</h4>
+        <h4 className="text-xl font-semibold bg-gray-800">{user.nickname}</h4>
         <p className="text-sm text-gray-400 bg-gray-800">{formattedDate}</p>
       </div>
       <p className="text-2xl font-bold text-yellow-400 mb-4 bg-gray-800">

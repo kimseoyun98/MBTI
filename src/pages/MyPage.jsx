@@ -9,7 +9,6 @@ const MyPage = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const accessToken = user?.accessToken;
-  const nickname = user?.nickname;
 
   useEffect(() => {
     if (!user) {
@@ -27,6 +26,7 @@ const MyPage = () => {
               },
             }
           );
+
           setUserInfo(response.data);
         } catch (error) {
           console.error("Failed to fetch user info:", error);
@@ -58,6 +58,7 @@ const MyPage = () => {
           ...prevState,
           nickname: response.data.nickname,
         }));
+
         alert("닉네임이 변경되었습니다.");
         setNewNickname("");
       } else {
@@ -76,7 +77,7 @@ const MyPage = () => {
   return (
     <div className="w-full flex flex-col items-center mt-12 space-y-12">
       <div className="text-3xl">
-        {user && <p>{nickname}님 안녕하세요 🥰</p>}
+        <p>{userInfo.nickname}님 안녕하세요 🥰</p>
       </div>
       <div className="w-1/2 space-y-8 p-12 bg-gray-800 rounded shadow-lg">
         <div className="flex flex-col items-center justify-center bg-gray-800">
