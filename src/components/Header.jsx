@@ -19,7 +19,7 @@ const Header = ({ children }) => {
       <header>
         <nav className="py-4 px-12 text-center flex justify-between items-center">
           <Link to="/" className="text-[20px] font-bold text-blue-500">
-            Home
+            MBTI 테스트
           </Link>
           <div className="space-x-6 text-[12px]">
             {user ? (

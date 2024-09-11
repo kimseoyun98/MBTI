@@ -29,7 +29,7 @@ const TestResult = () => {
     <div className="flex flex-col items-center justify-center">
       <div className="w-1/2 flex flex-col items-center justify-center gap-4 mt-8">
         <h1 className="text-3xl font-semibold text-primary-color mb-6 text-center">
-          테스트 결과: {result.result}
+          🔎 테스트 결과 → {result.result}
         </h1>
         <TestResultItem
           key={result.id}
@@ -39,7 +39,7 @@ const TestResult = () => {
         />
         <Link
           to="/results"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 mt-4 text-center"
+          className="w-full h-18 bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 mt-4 text-center"
         >
           결과 페이지로 이동하기
         </Link>

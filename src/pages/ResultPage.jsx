@@ -25,10 +25,10 @@ const ResultPage = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center shadow-lg rounded-lg p-8">
+    <div className="w-full flex flex-col items-center justify-center p-8">
       <div className="max-w-2xl w-full">
-        <h1 className="text-3xl font-bold text-primary-color mb-6 text-center">
-          모든 테스트 결과
+        <h1 className="text-3xl font-semibold text-primary-color mb-8 text-center">
+          🔎 모든 테스트 결과
         </h1>
         <TestResultList
           results={results}

@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useContext(AuthContext); // login 함수로 수정
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -32,23 +32,23 @@ const Login = () => {
         login(token, userData);
         navigate("/mypage");
       } else {
-        alert("Login failed");
+        alert("로그인 실패!");
       }
     } catch (error) {
       console.error("Login error:", error);
-      alert("Login failed");
+      alert("로그인 실패!");
     }
   };
 
   return (
     <div className="w-full flex flex-col items-center justify-center mt-20 space-y-8">
-      <div className="w-1/2 py-20 px-12 bg-gray-800 rounded shadow-lg">
-        <h2 className="bg-gray-800 text-2xl font-semibold text-center mb-8">
+      <div className="w-1/2 py-20 px-12 bg-gray-100 rounded shadow-lg">
+        <h2 className="text-2xl font-semibold text-center mb-8">
           로그인 페이지입니다
         </h2>
         <form
           onSubmit={handleSubmit}
-          className="mt-4 bg-gray-800 flex flex-col items-center justify-center gap-2"
+          className="mt-4 flex flex-col items-center justify-center gap-2"
         >
           <input
             type="text"
@@ -70,9 +70,9 @@ const Login = () => {
           >
             로그인하기
           </button>
-          <p className="text-sm mt-2 bg-gray-800">
+          <p className="text-sm mt-2">
             계정이 없으신가요?{" "}
-            <Link to="/Signup" className="text-gray-400 hover:text-blue-300">
+            <Link to="/Signup" className="text-gray-400 hover:text-blue-500">
               회원가입
             </Link>
           </p>

@@ -18,29 +18,38 @@ const TestForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-8 p-8 bg-gray-800 rounded shadow-lg"
+      className="space-y-12 p-8 bg-gray-100 rounded shadow-lg"
     >
       {questions.map((q, index) => (
-        <div key={q.id} className="mb-4 bg-gray-800 ">
-          <p className="font-semibold mb-2 bg-gray-800 ">{q.question}</p>
-          {q.options.map((option, i) => (
-            <label key={i} className="block bg-gray-800 ">
-              <input
-                type="radio"
-                name={`question-${index}`}
-                value={option}
-                checked={answers[index] === option}
-                onChange={() => handleChange(index, option)}
-                className="mr-2 "
-              />
-              {option}
-            </label>
-          ))}
+        <div key={q.id} className="mb-4">
+          <p className="font-semibold text-xl mb-4 p-4">{q.question}</p>
+          <div className="flex flex-col space-y-2">
+            {q.options.map((option, i) => (
+              <label
+                key={i}
+                className={`flex items-center cursor-pointer p-3 border-2 rounded-md transition ${
+                  answers[index] === option
+                    ? "bg-blue-100 text-blue-500 border-blue-300" // 선택된 상태
+                    : "text-black border-gray-200 hover:bg-gray-200" // 선택되지 않은 상태
+                }`}
+              >
+                <input
+                  type="radio"
+                  name={`question-${index}`}
+                  value={option}
+                  checked={answers[index] === option}
+                  onChange={() => handleChange(index, option)}
+                  className="hidden"
+                />
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
         </div>
       ))}
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+        className="w-full h-16 text-xl bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600"
       >
         제출하기
       </button>

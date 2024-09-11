@@ -15,6 +15,7 @@ import Header from "../components/Header";
 import TestPage from "../pages/TestPage";
 import ResultPage from "../pages/ResultPage";
 import TestResult from "../pages/TestResult";
+import styled from "styled-components";
 
 // PrivateRoute : 로그인이 필요한 페이지에 접근할 수 있도록 하는 컴포넌트
 const PrivateRoute = () => {

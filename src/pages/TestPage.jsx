@@ -31,8 +31,10 @@ const TestPage = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10">
-      <h1 className="text-3xl text-center font-bold mb-8">MBTI 테스트</h1>
+    <div className="max-w-2xl mx-auto mb-20 mt-10">
+      <h1 className="text-3xl text-center font-semibold mb-8">
+        ✨ MBTI 테스트 ✨
+      </h1>
       <TestForm onSubmit={handleTestSubmit} />
     </div>
   );

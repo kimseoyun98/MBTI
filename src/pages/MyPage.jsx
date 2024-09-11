@@ -79,20 +79,17 @@ const MyPage = () => {
       <div className="text-3xl">
         <p>{userInfo.nickname}님 안녕하세요 🥰</p>
       </div>
-      <div className="w-1/2 space-y-8 p-12 bg-gray-800 rounded shadow-lg">
-        <div className="flex flex-col items-center justify-center bg-gray-800">
-          <h2 className="bg-gray-800 text-2xl font-semibold text-center my-2">
+      <div className="w-1/3 space-y-8 p-12 bg-gray-100 rounded shadow-lg">
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="text-2xl font-semibold text-center my-2">
             프로필 수정
           </h2>
-          <div className="bg-gray-800 text-m font-light flex flex-col items-center my-4">
-            <p className="bg-gray-800">아이디: {userInfo.id}</p>
+          <div className=" text-m font-light flex flex-col items-center my-4">
+            <p>아이디: {userInfo.id}</p>
 
-            <p className="bg-gray-800">닉네임: {userInfo.nickname}</p>
+            <p>닉네임: {userInfo.nickname}</p>
           </div>
-          <form
-            onSubmit={handleNicknameChange}
-            className="w-full mt-4 bg-gray-800"
-          >
+          <form onSubmit={handleNicknameChange} className="w-full mt-4">
             <input
               type="text"
               value={newNickname}

@@ -33,12 +33,12 @@ const Signup = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center mt-20 space-y-8">
-      <div className="w-1/2 py-20 px-12 bg-gray-800 rounded shadow-lg">
-        <h2 className="bg-gray-800 text-2xl font-semibold text-center mb-8">
+      <div className="w-1/2 py-20 px-12 bg-gray-100 rounded shadow-lg">
+        <h2 className="text-2xl font-semibold text-center mb-8">
           회원가입 페이지입니다
         </h2>
         <form
-          className="mt-4 bg-gray-800 flex flex-col items-center justify-center gap-2"
+          className="mt-4 flex flex-col items-center justify-center gap-2"
           onSubmit={handleSubmit}
         >
           <input
@@ -68,9 +68,9 @@ const Signup = () => {
           >
             회원가입
           </button>
-          <p className="text-sm mt-2 bg-gray-800">
+          <p className="text-sm mt-2">
             이미 계정이 있으신가요?{" "}
-            <Link to="/Login" className="text-gray-400 hover:text-blue-300">
+            <Link to="/Login" className="text-gray-400 hover:text-blue-500">
               로그인
             </Link>
           </p>
