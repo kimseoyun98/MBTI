@@ -70,9 +70,9 @@ const Login = () => {
           >
             로그인하기
           </button>
-          <p className="text-sm mt-2">
+          <p className="text-sm mt-2 bg-gray-800">
             계정이 없으신가요?{" "}
-            <Link to="/signup" className="text-gray-400 hover:text-blue-300">
+            <Link to="/Signup" className="text-gray-400 hover:text-blue-300">
               회원가입
             </Link>
           </p>

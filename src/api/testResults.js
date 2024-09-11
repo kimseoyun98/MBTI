@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/testResults";
+const API_URL = "https://snowy-ritzy-chameleon.glitch.me/testResults";
 
 // 새로운 테스트 결과를 생성하는 함수
 export const createTestResult = async (resultData, token) => {

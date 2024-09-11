@@ -68,9 +68,9 @@ const Signup = () => {
           >
             회원가입
           </button>
-          <p className="text-sm mt-2">
+          <p className="text-sm mt-2 bg-gray-800">
             이미 계정이 있으신가요?{" "}
-            <Link to="/signup" className="text-gray-400 hover:text-blue-300">
+            <Link to="/Login" className="text-gray-400 hover:text-blue-300">
               로그인
             </Link>
           </p>
