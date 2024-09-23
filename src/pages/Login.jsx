@@ -30,7 +30,7 @@ const Login = () => {
         console.log("로그인 성공, 받아온 사용자 정보:", userData);
 
         login(token, userData);
-        navigate("/mypage");
+        navigate("/home");
       } else {
         alert("로그인 실패!");
       }

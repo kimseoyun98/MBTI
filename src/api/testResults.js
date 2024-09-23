@@ -22,6 +22,6 @@ export const deleteTestResult = async (id, token) => {
 
 // 특정 테스트 결과의 가시성을 업데이트하는 함수
 export const updateTestResultVisibility = async (id, visibility, token) => {
-  const response = await axios.put(`${API_URL}/${id}`, { visibility });
+  const response = await axios.patch(`${API_URL}/${id}`, { visibility });
   return response.data; // 업데이트된 결과 데이터 반환
 };
