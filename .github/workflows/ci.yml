@@ -21,15 +21,15 @@ jobs:
         id: restore-node-modules
         uses: actions/cache@v3
         with:
-          path: MBTI/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('MBTI/package-lock.json') }}
+          path: node_modules # 경로를 MBTI/node_modules에서 node_modules로 수정
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }} # 파일 경로 수정
           restore-keys: |
-            ${{ runner.os }}-node
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI # 이 부분을 수정한 것
+        working-directory: . # 프로젝트 루트 디렉토리인 현재 디렉토리로 설정
 
   # lint 확인 및 수정
   lint:
@@ -48,18 +48,19 @@ jobs:
         id: restore-node-modules
         uses: actions/cache@v3
         with:
-          path: MBTI/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('MBTI/package-lock.json') }}
+          path: node_modules # 경로를 MBTI/node_modules에서 node_modules로 수정
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }} # 파일 경로 수정
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: Install dependencies (if not cached)
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI # 이 부분을 수정한 것
+        working-directory: . # 프로젝트 루트 디렉토리인 현재 디렉토리로 설정
 
       - name: Run lint
         run: npm run lint
-        working-directory: MBTI # 이 부분을 수정한 것
+        working-directory: . # 프로젝트 루트 디렉토리인 현재 디렉토리로 설정
 
   # 테스트 검증
   test:
@@ -78,18 +79,19 @@ jobs:
         id: restore-node-modules
         uses: actions/cache@v3
         with:
-          path: MBTI/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('MBTI/package-lock.json') }}
+          path: node_modules # 경로를 MBTI/node_modules에서 node_modules로 수정
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }} # 파일 경로 수정
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: Install dependencies (if not cached)
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI # 이 부분을 수정한 것
+        working-directory: . # 프로젝트 루트 디렉토리인 현재 디렉토리로 설정
 
       - name: Run tests
         run: npm run test
-        working-directory: MBTI # 이 부분을 수정한 것
+        working-directory: . # 프로젝트 루트 디렉토리인 현재 디렉토리로 설정
 
   # React Build
   build:
@@ -108,15 +110,16 @@ jobs:
         id: restore-node-modules
         uses: actions/cache@v3
         with:
-          path: MBTI/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('MBTI/package-lock.json') }}
+          path: node_modules # 경로를 MBTI/node_modules에서 node_modules로 수정
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }} # 파일 경로 수정
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: Install dependencies (if not cached)
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI # 이 부분을 수정한 것
+        working-directory: . # 프로젝트 루트 디렉토리인 현재 디렉토리로 설정
 
       - name: Run Build
         run: npm run build
-        working-directory: MBTI # 이 부분을 수정한 것
+        working-directory: . # 프로젝트 루트 디렉토리인 현재 디렉토리로 설정
