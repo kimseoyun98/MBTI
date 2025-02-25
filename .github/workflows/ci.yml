@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI
+        working-directory: MBTI # 이 부분을 수정한 것
 
   # lint 확인 및 수정
   lint:
@@ -55,11 +55,11 @@ jobs:
       - name: Install dependencies (if not cached)
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI
+        working-directory: MBTI # 이 부분을 수정한 것
 
       - name: Run lint
         run: npm run lint
-        working-directory: MBTI
+        working-directory: MBTI # 이 부분을 수정한 것
 
   # 테스트 검증
   test:
@@ -85,11 +85,11 @@ jobs:
       - name: Install dependencies (if not cached)
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI
+        working-directory: MBTI # 이 부분을 수정한 것
 
       - name: Run tests
         run: npm run test
-        working-directory: MBTI
+        working-directory: MBTI # 이 부분을 수정한 것
 
   # React Build
   build:
@@ -115,8 +115,8 @@ jobs:
       - name: Install dependencies (if not cached)
         if: steps.restore-node-modules.outputs.cache-hit != 'true'
         run: npm install
-        working-directory: MBTI
+        working-directory: MBTI # 이 부분을 수정한 것
 
       - name: Run Build
         run: npm run build
-        working-directory: MBTI
+        working-directory: MBTI # 이 부분을 수정한 것
